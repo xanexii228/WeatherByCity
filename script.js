@@ -103,6 +103,7 @@ let weatherApp = new WeatherApp(0);
 const ul1 = document.querySelector('li:nth-child(1)')
 const ul2 = document.querySelector('li:nth-child(2)')
 const ul3 = document.querySelector('li:nth-child(3)')
+const settingsBg = document.querySelector('.settings-bg')
 let opened = false;
 
 function Wait(ms) {
@@ -110,6 +111,8 @@ function Wait(ms) {
 }
 document.getElementById("setting-hover").addEventListener('click', async ()=>{
     if(opened === true){
+        settingsBg.style.transform = 'translateX(-350px)';
+        settingsBg.style.opacity = 0;
         ul1.style.transform = 'translateX(-350px)';
         await Wait(50);
         ul2.style.transform = 'translateX(-350px)';
@@ -118,6 +121,8 @@ document.getElementById("setting-hover").addEventListener('click', async ()=>{
         opened = false;
     }
     else{
+        settingsBg.style.transform = 'translateX(0px)';
+        settingsBg.style.opacity = 0.6;
         ul1.style.transform = 'translateX(0px)';
         await Wait(50);
         ul2.style.transform = 'translateX(0px)';
