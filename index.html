@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Погодное приложение</title>
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+</head>
+<body>
+
+  <div class="settings">
+    <span id='setting-hover' class="setting-hover">⚙️</span>
+    <ul>
+      <li><p>🖼️</p>
+        <label>
+            <input class='first-color' type="color" value="#74b9ff">
+            <div class="circle"></div>
+        </label>
+        <label>
+            <input class='second-color' type="color" value="#0984e3">
+            <div class="circle"></div>
+        </label>
+      </li>
+      <li><p>🔊</p>
+        <input id="volumeSlider" type="range">
+      </li>
+      <li>
+        <div class="switch-button" id="powerSwitch">
+        <div class="switch-track">
+            <div class="switch-labels">
+                <span class="switch-label-left">°C</span>
+                <span class="switch-label-right">°F</span>
+            </div>
+            <div class="switch-thumb">
+                <div class="thumb-text">°C/°F</div>
+            </div>
+        </div>
+      </div> 
+      </li>
+    </ul>
+  </div>
+  <audio id="rainSound" loop>
+        <source src="raining.mp3" type="audio/mpeg">
+    </audio>
+    <div class="container">
+        <h1>🌤️ Погода сейчас</h1>
+        
+        <div class="search-box">
+            <input type="text" id="city-input" placeholder="Введите город...">
+            <button id="search-btn">Поиск</button>
+        </div>
+        
+        <div class="weather-card" id="weather-card">
+            <div class="location">Город не выбран</div>
+            <div class="temperature">--°C</div>
+            <div class="description">--</div>
+            <div class="details">
+                <div class="detail-item">
+                    <span>💧 Влажность</span>
+                    <span>--%</span>
+                </div>
+                <div class="detail-item">
+                    <span>💨 Ветер</span>
+                    <span>-- м/с</span>
+                </div>
+                <div class="detail-item">
+                    <span>🌡️ Ощущается</span>
+                    <span>--°C</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="error" id="error-message" style="display: none;">
+            Город не найден. Попробуйте еще раз.
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
